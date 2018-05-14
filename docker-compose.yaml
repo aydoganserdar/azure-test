@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+    scw-oee-tracker:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: container-scw-oee-tracker
+        volumes:
+            - .:/var/www/html
+        ports:
+            - "80:80"
