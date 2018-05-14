@@ -1,0 +1,1142 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "extensions_configuremaster_commandToExecute": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_linuxdiagnostic_storageAccountName": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "extensions_linuxdiagnostic_storageAccountKey": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "containerServices_test_oee_name": {
+            "defaultValue": "test-oee",
+            "type": "String"
+        },
+        "virtualNetworks_swarm_vnet_F50C5F2B_name": {
+            "defaultValue": "swarm-vnet-F50C5F2B",
+            "type": "String"
+        },
+        "storageAccounts_oyyjcddcjdjs4swarm0_name": {
+            "defaultValue": "oyyjcddcjdjs4swarm0",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_name": {
+            "defaultValue": "swarm-agent-lb-F50C5F2B",
+            "type": "String"
+        },
+        "storageAccounts_c0oyyjcddcjdjs4swarm3_name": {
+            "defaultValue": "c0oyyjcddcjdjs4swarm3",
+            "type": "String"
+        },
+        "storageAccounts_i0oyyjcddcjdjs4swarm4_name": {
+            "defaultValue": "i0oyyjcddcjdjs4swarm4",
+            "type": "String"
+        },
+        "storageAccounts_o0oyyjcddcjdjs4swarm5_name": {
+            "defaultValue": "o0oyyjcddcjdjs4swarm5",
+            "type": "String"
+        },
+        "storageAccounts_60oyyjcddcjdjs4swarm2_name": {
+            "defaultValue": "60oyyjcddcjdjs4swarm2",
+            "type": "String"
+        },
+        "storageAccounts_00oyyjcddcjdjs4swarm1_name": {
+            "defaultValue": "00oyyjcddcjdjs4swarm1",
+            "type": "String"
+        },
+        "loadBalancers_swarm_master_lb_F50C5F2B_name": {
+            "defaultValue": "swarm-master-lb-F50C5F2B",
+            "type": "String"
+        },
+        "virtualMachines_swarm_master_F50C5F2B_0_name": {
+            "defaultValue": "swarm-master-F50C5F2B-0",
+            "type": "String"
+        },
+        "storageAccounts_oyyjcddcjdjs4swarmdiag0_name": {
+            "defaultValue": "oyyjcddcjdjs4swarmdiag0",
+            "type": "String"
+        },
+        "networkInterfaces_swarm_master_F50C5F2B_nic_0_name": {
+            "defaultValue": "swarm-master-F50C5F2B-nic-0",
+            "type": "String"
+        },
+        "virtualMachineScaleSets_swarm_agent_F50C5F2B_vmss_name": {
+            "defaultValue": "swarm-agent-F50C5F2B-vmss",
+            "type": "String"
+        },
+        "availabilitySets_swarm_master_availabilitySet_F50C5F2B_name": {
+            "defaultValue": "swarm-master-availabilitySet-F50C5F2B",
+            "type": "String"
+        },
+        "publicIPAddresses_swarm_master_ip_swc_oeemgmt_F50C5F2B_name": {
+            "defaultValue": "swarm-master-ip-swc-oeemgmt-F50C5F2B",
+            "type": "String"
+        },
+        "publicIPAddresses_swarm_agent_ip_swc_oeeagents_F50C5F2B_name": {
+            "defaultValue": "swarm-agent-ip-swc-oeeagents-F50C5F2B",
+            "type": "String"
+        },
+        "subnets_swarm_subnet_name": {
+            "defaultValue": "swarm-subnet",
+            "type": "String"
+        },
+        "subnets_swarm_masterSubnet_name": {
+            "defaultValue": "swarm-masterSubnet",
+            "type": "String"
+        },
+        "extensions_configuremaster_name": {
+            "defaultValue": "configuremaster",
+            "type": "String"
+        },
+        "extensions_linuxdiagnostic_name": {
+            "defaultValue": "linuxdiagnostic",
+            "type": "String"
+        },
+        "inboundNatRules_SSH_swarm_master_F50C5F2B_0_name": {
+            "defaultValue": "SSH-swarm-master-F50C5F2B-0",
+            "type": "String"
+        },
+        "inboundNatRules_SSHPort22_swarm_master_F50C5F2B_0_name": {
+            "defaultValue": "SSHPort22-swarm-master-F50C5F2B-0",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/frontendIPConfigurations/swarm-agent-lbFrontEnd-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_1": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/backendAddressPools/swarm-agent-pool-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_2": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/probes/tcpHTTPProbe",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_3": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/frontendIPConfigurations/swarm-agent-lbFrontEnd-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_4": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/backendAddressPools/swarm-agent-pool-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_5": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/probes/tcpHTTPSProbe",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_6": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/frontendIPConfigurations/swarm-agent-lbFrontEnd-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_7": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/backendAddressPools/swarm-agent-pool-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_agent_lb_F50C5F2B_id_8": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B/probes/tcpPort8080Probe",
+            "type": "String"
+        },
+        "loadBalancers_swarm_master_lb_F50C5F2B_id": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-master-lb-F50C5F2B/frontendIPConfigurations/swarm-master-lbFrontEnd-F50C5F2B",
+            "type": "String"
+        },
+        "loadBalancers_swarm_master_lb_F50C5F2B_id_1": {
+            "defaultValue": "/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-master-lb-F50C5F2B/frontendIPConfigurations/swarm-master-lbFrontEnd-F50C5F2B",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Compute/availabilitySets/swarm-master-availabilitySet-F50C5F2B'.",
+            "type": "Microsoft.Compute/availabilitySets",
+            "sku": {
+                "name": "Classic"
+            },
+            "name": "[parameters('availabilitySets_swarm_master_availabilitySet_F50C5F2B_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "platformUpdateDomainCount": 5,
+                "platformFaultDomainCount": 3,
+                "virtualMachines": [
+                    {
+                        "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+                    }
+                ]
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Compute/virtualMachines/swarm-master-F50C5F2B-0'.",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[parameters('virtualMachines_swarm_master_F50C5F2B_0_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "tags": {
+                "creationSource": "acs-swarm-master-F50C5F2B-0"
+            },
+            "scale": null,
+            "properties": {
+                "availabilitySet": {
+                    "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_swarm_master_availabilitySet_F50C5F2B_name'))]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "Standard_D2_v2"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "Canonical",
+                        "offer": "UbuntuServer",
+                        "sku": "14.04.4-LTS",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_swarm_master_F50C5F2B_0_name'),'-osdisk')]",
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('https', '://', parameters('storageAccounts_oyyjcddcjdjs4swarm0_name'), '.blob.core.windows.net', concat('/vhds/', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'),'-osdisk.vhd'))]"
+                        },
+                        "caching": "ReadWrite",
+                        "diskSizeGB": 29
+                    },
+                    "dataDisks": []
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_swarm_master_F50C5F2B_0_name')]",
+                    "adminUsername": "dockeroee",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/dockeroee/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0bIYCinQS39IdHUa+H1PsE1IhsRCIyM2wpZSutAXlKrtjLlmWXb1SqXt9ZlodAZGCdmkbakcAJAUGcadTdy8v0lyieNl7BBz0BSGYy0UPlkL1uiaTF0wrYX92afBZE7QN/ZdPKh7/F90DFlmxqS3JlNyAUQUDpfi18WX9jO8CIK5ora1UKXeYgCTYCqVlb1QqberxJfODHhGp08YGjNAJTZieV0VvCr3g3dfIsBmBJxgW7jOt4mn/APugAhSUaUrLKMIYvwKv3v7QdwieZo9KE0fgt1x5rBReG/uJ17gS/fAcTnfod2TxBa4oZ//4cNBWGKQ1/bBF2G4UpFZWUmUtUlY0mmb6AXO3uh/nE57jxofzYv50glh+iCrpyJbS4yzm8pMC+arXcKhC0wUU+gwpcVJy3a1Tlyk1yZvTXBfUUhMqRAZ9bb4lYjpf0TYo2coB/SJH7PBLTi++mjAPxlx95Tk2zKntNTzVRWE8DFHDykmYUNNaGvmUduC0kltrwJeFybluwndch0RZ9qBd/bzKdN68DxbjgGsqbfXALpuh4DRB0N5BQjUNKRwaqmFPRB5Ubmh8UzUppr4PCtR4yw4PbEa12D047u+Dc1PYt/EZ3FMKjnySZCXc++as6AmAeOi5cxeoWgpWd5EWg1P3MpbWRvcrj1VEXUsihEOOl8HWaw=="
+                                }
+                            ]
+                        }
+                    },
+                    "secrets": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_swarm_master_F50C5F2B_nic_0_name'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https', '://', parameters('storageAccounts_oyyjcddcjdjs4swarmdiag0_name'), '.blob.core.windows.net', '/')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_swarm_master_availabilitySet_F50C5F2B_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_oyyjcddcjdjs4swarm0_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_swarm_master_F50C5F2B_nic_0_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_oyyjcddcjdjs4swarmdiag0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Compute/virtualMachineScaleSets/swarm-agent-F50C5F2B-vmss'.",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "sku": {
+                "name": "Standard_D2",
+                "tier": "Standard",
+                "capacity": 1
+            },
+            "name": "[parameters('virtualMachineScaleSets_swarm_agent_F50C5F2B_vmss_name')]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "tags": {
+                "creationSource": "acs-swarm-agent-F50C5F2B-vmss"
+            },
+            "scale": null,
+            "properties": {
+                "singlePlacementGroup": true,
+                "upgradePolicy": {
+                    "mode": "Automatic",
+                    "automaticOSUpgrade": false
+                },
+                "virtualMachineProfile": {
+                    "osProfile": {
+                        "computerNamePrefix": "swarm-agent-F50C5F2B",
+                        "adminUsername": "dockeroee",
+                        "linuxConfiguration": {
+                            "disablePasswordAuthentication": true,
+                            "ssh": {
+                                "publicKeys": [
+                                    {
+                                        "path": "/home/dockeroee/.ssh/authorized_keys",
+                                        "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0bIYCinQS39IdHUa+H1PsE1IhsRCIyM2wpZSutAXlKrtjLlmWXb1SqXt9ZlodAZGCdmkbakcAJAUGcadTdy8v0lyieNl7BBz0BSGYy0UPlkL1uiaTF0wrYX92afBZE7QN/ZdPKh7/F90DFlmxqS3JlNyAUQUDpfi18WX9jO8CIK5ora1UKXeYgCTYCqVlb1QqberxJfODHhGp08YGjNAJTZieV0VvCr3g3dfIsBmBJxgW7jOt4mn/APugAhSUaUrLKMIYvwKv3v7QdwieZo9KE0fgt1x5rBReG/uJ17gS/fAcTnfod2TxBa4oZ//4cNBWGKQ1/bBF2G4UpFZWUmUtUlY0mmb6AXO3uh/nE57jxofzYv50glh+iCrpyJbS4yzm8pMC+arXcKhC0wUU+gwpcVJy3a1Tlyk1yZvTXBfUUhMqRAZ9bb4lYjpf0TYo2coB/SJH7PBLTi++mjAPxlx95Tk2zKntNTzVRWE8DFHDykmYUNNaGvmUduC0kltrwJeFybluwndch0RZ9qBd/bzKdN68DxbjgGsqbfXALpuh4DRB0N5BQjUNKRwaqmFPRB5Ubmh8UzUppr4PCtR4yw4PbEa12D047u+Dc1PYt/EZ3FMKjnySZCXc++as6AmAeOi5cxeoWgpWd5EWg1P3MpbWRvcrj1VEXUsihEOOl8HWaw=="
+                                    }
+                                ]
+                            }
+                        },
+                        "secrets": []
+                    },
+                    "storageProfile": {
+                        "osDisk": {
+                            "vhdContainers": [
+                                "https://00oyyjcddcjdjs4swarm1.blob.core.windows.net/osdisk",
+                                "https://60oyyjcddcjdjs4swarm2.blob.core.windows.net/osdisk",
+                                "https://c0oyyjcddcjdjs4swarm3.blob.core.windows.net/osdisk",
+                                "https://i0oyyjcddcjdjs4swarm4.blob.core.windows.net/osdisk",
+                                "https://o0oyyjcddcjdjs4swarm5.blob.core.windows.net/osdisk"
+                            ],
+                            "name": "swarm-agent-F50C5F2Bvmssosdisk0",
+                            "createOption": "FromImage",
+                            "caching": "ReadWrite"
+                        },
+                        "imageReference": {
+                            "publisher": "Canonical",
+                            "offer": "UbuntuServer",
+                            "sku": "14.04.4-LTS",
+                            "version": "latest"
+                        }
+                    },
+                    "networkProfile": {
+                        "networkInterfaceConfigurations": [
+                            {
+                                "name": "agentNodeNic",
+                                "properties": {
+                                    "primary": true,
+                                    "ipConfigurations": [
+                                        {
+                                            "name": "nicipconfig",
+                                            "properties": {
+                                                "subnet": {
+                                                    "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), parameters('subnets_swarm_subnet_name'))]"
+                                                },
+                                                "loadBalancerBackendAddressPools": [
+                                                    {
+                                                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_agent_lb_F50C5F2B_name')), '/backendAddressPools/swarm-agent-pool-F50C5F2B')]"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    "diagnosticsProfile": {
+                        "bootDiagnostics": {
+                            "enabled": true,
+                            "storageUri": "[concat('https', '://', parameters('storageAccounts_oyyjcddcjdjs4swarmdiag0_name'), '.blob.core.windows.net', '/')]"
+                        }
+                    },
+                    "extensionProfile": {
+                        "extensions": [
+                            {
+                                "properties": {
+                                    "publisher": "Microsoft.OSTCExtensions",
+                                    "type": "LinuxDiagnostic",
+                                    "typeHandlerVersion": "2.3",
+                                    "autoUpgradeMinorVersion": true,
+                                    "settings": {
+                                        "xmlCfg": "PFdhZENmZz48RGlhZ25vc3RpY01vbml0b3JDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJzIHNjaGVkdWxlZFRyYW5zZmVyUGVyaW9kPSJQVDFNIj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XEF2YWlsYWJsZU1lbW9yeSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IkJ5dGVzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFBlcmNlbnRBdmFpbGFibGVNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiBwZXJjZW50IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJCeXRlcyI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9Ik1lbW9yeSB1c2VkIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxNZW1vcnlcUGVyY2VudFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IHBlcmNlbnRhZ2UiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXE1lbW9yeVxQZXJjZW50VXNlZEJ5Q2FjaGUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiB1c2VkIGJ5IGNhY2hlIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElkbGVUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBpZGxlIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFByb2Nlc3NvclxQZXJjZW50VXNlclRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIHVzZXIgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUHJvY2Vzc29yXFBlcmNlbnRQcm9jZXNzb3JUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBwZXJjZW50YWdlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElPV2FpdFRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIElPIHdhaXQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRvdGFsIGJ5dGVzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcUmVhZEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgZ3Vlc3QgT1MiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xXcml0ZUJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcVHJhbnNmZXJzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVycyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXFJlYWRzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWRzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcV3JpdGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlcyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VSZWFkVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VXcml0ZVRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJTZWNvbmRzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iRGlzayB3cml0ZSB0aW1lIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcQXZlcmFnZVRyYW5zZmVyVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVyIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xBdmVyYWdlRGlza1F1ZXVlTGVuZ3RoIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHF1ZXVlIGxlbmd0aCIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48L1BlcmZvcm1hbmNlQ291bnRlcnM+PE1ldHJpY3MgcmVzb3VyY2VJZD0ic3dhcm0tYWdlbnQtRjUwQzVGMkIiPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxSCIvPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxTSIvPjwvTWV0cmljcz48L0RpYWdub3N0aWNNb25pdG9yQ29uZmlndXJhdGlvbj48L1dhZENmZz4=",
+                                        "StorageAccount": "oyyjcddcjdjs4swarmdiag0"
+                                    }
+                                },
+                                "name": "LinuxDiagnostic"
+                            }
+                        ]
+                    }
+                },
+                "overprovision": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), parameters('subnets_swarm_subnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_agent_lb_F50C5F2B_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_oyyjcddcjdjs4swarmdiag0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/TEST-OEE-2/providers/Microsoft.ContainerService/containerServices/test-oee'.",
+            "type": "Microsoft.ContainerService/containerServices",
+            "name": "[parameters('containerServices_test_oee_name')]",
+            "apiVersion": "2016-03-30",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "orchestratorProfile": {
+                    "orchestratorType": "Swarm"
+                },
+                "masterProfile": {
+                    "count": 1,
+                    "dnsPrefix": "swc-oeemgmt"
+                },
+                "agentPoolProfiles": [
+                    {
+                        "name": "agentpool",
+                        "count": 1,
+                        "vmSize": "Standard_D2",
+                        "dnsPrefix": "swc-oeeagents"
+                    }
+                ],
+                "linuxProfile": {
+                    "ssh": {
+                        "publicKeys": [
+                            {
+                                "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0bIYCinQS39IdHUa+H1PsE1IhsRCIyM2wpZSutAXlKrtjLlmWXb1SqXt9ZlodAZGCdmkbakcAJAUGcadTdy8v0lyieNl7BBz0BSGYy0UPlkL1uiaTF0wrYX92afBZE7QN/ZdPKh7/F90DFlmxqS3JlNyAUQUDpfi18WX9jO8CIK5ora1UKXeYgCTYCqVlb1QqberxJfODHhGp08YGjNAJTZieV0VvCr3g3dfIsBmBJxgW7jOt4mn/APugAhSUaUrLKMIYvwKv3v7QdwieZo9KE0fgt1x5rBReG/uJ17gS/fAcTnfod2TxBa4oZ//4cNBWGKQ1/bBF2G4UpFZWUmUtUlY0mmb6AXO3uh/nE57jxofzYv50glh+iCrpyJbS4yzm8pMC+arXcKhC0wUU+gwpcVJy3a1Tlyk1yZvTXBfUUhMqRAZ9bb4lYjpf0TYo2coB/SJH7PBLTi++mjAPxlx95Tk2zKntNTzVRWE8DFHDykmYUNNaGvmUduC0kltrwJeFybluwndch0RZ9qBd/bzKdN68DxbjgGsqbfXALpuh4DRB0N5BQjUNKRwaqmFPRB5Ubmh8UzUppr4PCtR4yw4PbEa12D047u+Dc1PYt/EZ3FMKjnySZCXc++as6AmAeOi5cxeoWgpWd5EWg1P3MpbWRvcrj1VEXUsihEOOl8HWaw=="
+                            }
+                        ]
+                    },
+                    "adminUsername": "dockeroee"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-agent-lb-F50C5F2B'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "d22bfb51-6f9e-4cc4-9953-cd0de62199ce",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "swarm-agent-lbFrontEnd-F50C5F2B",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_swarm_agent_ip_swc_oeeagents_F50C5F2B_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "swarm-agent-pool-F50C5F2B",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [
+                    {
+                        "name": "LBRuleHTTP",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id')]"
+                            },
+                            "frontendPort": 80,
+                            "backendPort": 80,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_1')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_2')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "LBRuleHTTPS",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_3')]"
+                            },
+                            "frontendPort": 443,
+                            "backendPort": 443,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_4')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_5')]"
+                            }
+                        }
+                    },
+                    {
+                        "name": "LBRulePort8080",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_6')]"
+                            },
+                            "frontendPort": 8080,
+                            "backendPort": 8080,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 5,
+                            "protocol": "Tcp",
+                            "loadDistribution": "Default",
+                            "backendAddressPool": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_7')]"
+                            },
+                            "probe": {
+                                "id": "[parameters('loadBalancers_swarm_agent_lb_F50C5F2B_id_8')]"
+                            }
+                        }
+                    }
+                ],
+                "probes": [
+                    {
+                        "name": "tcpHTTPProbe",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 80,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "tcpHTTPSProbe",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 443,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    },
+                    {
+                        "name": "tcpPort8080Probe",
+                        "etag": "W/\"1cf1794b-db7d-4b23-8cd4-b5d4753921cd\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "Tcp",
+                            "port": 8080,
+                            "intervalInSeconds": 5,
+                            "numberOfProbes": 2
+                        }
+                    }
+                ],
+                "inboundNatRules": [],
+                "outboundNatRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_swarm_agent_ip_swc_oeeagents_F50C5F2B_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-master-lb-F50C5F2B'.",
+            "type": "Microsoft.Network/loadBalancers",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('loadBalancers_swarm_master_lb_F50C5F2B_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "eee42ff1-576d-46d2-9ed9-1f3fc6260671",
+                "frontendIPConfigurations": [
+                    {
+                        "name": "swarm-master-lbFrontEnd-F50C5F2B",
+                        "etag": "W/\"e4b7bdee-1cd2-4c26-a4af-cf9dc90ad728\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_swarm_master_ip_swc_oeemgmt_F50C5F2B_name'))]"
+                            }
+                        }
+                    }
+                ],
+                "backendAddressPools": [
+                    {
+                        "name": "swarm-master-pool-F50C5F2B",
+                        "etag": "W/\"e4b7bdee-1cd2-4c26-a4af-cf9dc90ad728\"",
+                        "properties": {
+                            "provisioningState": "Succeeded"
+                        }
+                    }
+                ],
+                "loadBalancingRules": [],
+                "probes": [],
+                "inboundNatRules": [
+                    {
+                        "name": "SSH-swarm-master-F50C5F2B-0",
+                        "etag": "W/\"e4b7bdee-1cd2-4c26-a4af-cf9dc90ad728\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_swarm_master_lb_F50C5F2B_id')]"
+                            },
+                            "frontendPort": 2200,
+                            "backendPort": 22,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    },
+                    {
+                        "name": "SSHPort22-swarm-master-F50C5F2B-0",
+                        "etag": "W/\"e4b7bdee-1cd2-4c26-a4af-cf9dc90ad728\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "frontendIPConfiguration": {
+                                "id": "[parameters('loadBalancers_swarm_master_lb_F50C5F2B_id_1')]"
+                            },
+                            "frontendPort": 22,
+                            "backendPort": 2222,
+                            "enableFloatingIP": false,
+                            "idleTimeoutInMinutes": 4,
+                            "protocol": "Tcp"
+                        }
+                    }
+                ],
+                "outboundNatRules": [],
+                "inboundNatPools": []
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_swarm_master_ip_swc_oeemgmt_F50C5F2B_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/networkInterfaces/swarm-master-F50C5F2B-nic-0'.",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[parameters('networkInterfaces_swarm_master_F50C5F2B_nic_0_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "77800bcd-19c1-405b-904f-6a72a522f043",
+                "ipConfigurations": [
+                    {
+                        "name": "ipConfigNode",
+                        "etag": "W/\"0c129da7-2dcf-4598-92ed-968991a9d44a\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "privateIPAddress": "172.16.0.5",
+                            "privateIPAllocationMethod": "Static",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), parameters('subnets_swarm_masterSubnet_name'))]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4",
+                            "loadBalancerBackendAddressPools": [
+                                {
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name')), '/backendAddressPools/swarm-master-pool-F50C5F2B')]"
+                                }
+                            ],
+                            "loadBalancerInboundNatRules": [
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), parameters('inboundNatRules_SSH_swarm_master_F50C5F2B_0_name'))]"
+                                },
+                                {
+                                    "id": "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), parameters('inboundNatRules_SSHPort22_swarm_master_F50C5F2B_0_name'))]"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": [],
+                    "appliedDnsServers": [],
+                    "internalDomainNameSuffix": "wpeta2rnw1wuhgfwahsc4332lg.bx.internal.cloudapp.net"
+                },
+                "macAddress": "00-0D-3A-17-83-60",
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "primary": true,
+                "virtualMachine": {
+                    "id": "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), parameters('subnets_swarm_masterSubnet_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), parameters('inboundNatRules_SSH_swarm_master_F50C5F2B_0_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers/inboundNatRules', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), parameters('inboundNatRules_SSHPort22_swarm_master_F50C5F2B_0_name'))]",
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/publicIPAddresses/swarm-agent-ip-swc-oeeagents-F50C5F2B'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_swarm_agent_ip_swc_oeeagents_F50C5F2B_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "691759ad-a82d-47dc-9664-638ff8e71c37",
+                "ipAddress": "40.114.39.29",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "swc-oeeagents",
+                    "fqdn": "swc-oeeagents.eastus.cloudapp.azure.com"
+                },
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/publicIPAddresses/swarm-master-ip-swc-oeemgmt-F50C5F2B'.",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[parameters('publicIPAddresses_swarm_master_ip_swc_oeemgmt_F50C5F2B_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "7e9f0770-61fe-40cf-9b33-be504f996a76",
+                "ipAddress": "40.114.32.16",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "swc-oeemgmt",
+                    "fqdn": "swc-oeemgmt.eastus.cloudapp.azure.com"
+                },
+                "ipTags": []
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/virtualNetworks/swarm-vnet-F50C5F2B'.",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[parameters('virtualNetworks_swarm_vnet_F50C5F2B_name')]",
+            "apiVersion": "2018-02-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "resourceGuid": "7230c9b3-b62d-43ed-98b6-01e42f77bc5e",
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/8",
+                        "172.16.0.0/24"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "swarm-subnet",
+                        "etag": "W/\"2af03bbd-a1e9-4214-85c1-ca5b9684981d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "10.0.0.0/11"
+                        }
+                    },
+                    {
+                        "name": "swarm-masterSubnet",
+                        "etag": "W/\"2af03bbd-a1e9-4214-85c1-ca5b9684981d\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "addressPrefix": "172.16.0.0/24"
+                        }
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false,
+                "enableVmProtection": false
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/c0oyyjcddcjdjs4swarm3'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_c0oyyjcddcjdjs4swarm3_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/oyyjcddcjdjs4swarmdiag0'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_oyyjcddcjdjs4swarmdiag0_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/i0oyyjcddcjdjs4swarm4'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_i0oyyjcddcjdjs4swarm4_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/oyyjcddcjdjs4swarm0'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_oyyjcddcjdjs4swarm0_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/o0oyyjcddcjdjs4swarm5'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_o0oyyjcddcjdjs4swarm5_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/60oyyjcddcjdjs4swarm2'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_60oyyjcddcjdjs4swarm2_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Storage/storageAccounts/00oyyjcddcjdjs4swarm1'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "name": "[parameters('storageAccounts_00oyyjcddcjdjs4swarm1_name')]",
+            "apiVersion": "2017-10-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Compute/virtualMachines/swarm-master-F50C5F2B-0/extensions/configuremaster'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_swarm_master_F50C5F2B_0_name'), '/', parameters('extensions_configuremaster_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "CustomScriptForLinux",
+                "typeHandlerVersion": "1.4",
+                "autoUpgradeMinorVersion": false,
+                "settings": {
+                    "fileUris": []
+                },
+                "protectedSettings": {
+                    "commandToExecute": "[parameters('extensions_configuremaster_commandToExecute')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Compute/virtualMachines/swarm-master-F50C5F2B-0/extensions/linuxdiagnostic'.",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachines_swarm_master_F50C5F2B_0_name'), '/', parameters('extensions_linuxdiagnostic_name'))]",
+            "apiVersion": "2017-12-01",
+            "location": "eastus",
+            "scale": null,
+            "properties": {
+                "publisher": "Microsoft.OSTCExtensions",
+                "type": "[concat(parameters('extensions_linuxdiagnostic_name'),'LinuxDiagnostic', parameters('extensions_linuxdiagnostic_name'))]",
+                "typeHandlerVersion": "2.3",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "xmlCfg": "PFdhZENmZz48RGlhZ25vc3RpY01vbml0b3JDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJzIHNjaGVkdWxlZFRyYW5zZmVyUGVyaW9kPSJQVDFNIj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XEF2YWlsYWJsZU1lbW9yeSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IkJ5dGVzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFBlcmNlbnRBdmFpbGFibGVNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiBwZXJjZW50IGF2YWlsYWJsZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcTWVtb3J5XFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJCeXRlcyI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9Ik1lbW9yeSB1c2VkIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxNZW1vcnlcUGVyY2VudFVzZWRNZW1vcnkiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtb3J5IHBlcmNlbnRhZ2UiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXE1lbW9yeVxQZXJjZW50VXNlZEJ5Q2FjaGUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iTWVtLiB1c2VkIGJ5IGNhY2hlIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElkbGVUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBpZGxlIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFByb2Nlc3NvclxQZXJjZW50VXNlclRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIHVzZXIgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUHJvY2Vzc29yXFBlcmNlbnRQcm9jZXNzb3JUaW1lIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iUGVyY2VudCI+PGFubm90YXRpb24gZGlzcGxheU5hbWU9IkNQVSBwZXJjZW50YWdlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQcm9jZXNzb3JcUGVyY2VudElPV2FpdFRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJQZXJjZW50Ij48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iQ1BVIElPIHdhaXQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRvdGFsIGJ5dGVzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcUmVhZEJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgZ3Vlc3QgT1MiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xXcml0ZUJ5dGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQnl0ZXNQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlIGd1ZXN0IE9TIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcVHJhbnNmZXJzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVycyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXFJlYWRzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWRzIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcV3JpdGVzUGVyU2Vjb25kIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnRQZXJTZWNvbmQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHdyaXRlcyIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VSZWFkVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHJlYWQgdGltZSIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48UGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbiBjb3VudGVyU3BlY2lmaWVyPSJcUGh5c2ljYWxEaXNrXEF2ZXJhZ2VXcml0ZVRpbWUiIHNhbXBsZVJhdGU9IlBUMTVTIiB1bml0PSJTZWNvbmRzIj48YW5ub3RhdGlvbiBkaXNwbGF5TmFtZT0iRGlzayB3cml0ZSB0aW1lIiBsb2NhbGU9ImVuLXVzIi8+PC9QZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uPjxQZXJmb3JtYW5jZUNvdW50ZXJDb25maWd1cmF0aW9uIGNvdW50ZXJTcGVjaWZpZXI9IlxQaHlzaWNhbERpc2tcQXZlcmFnZVRyYW5zZmVyVGltZSIgc2FtcGxlUmF0ZT0iUFQxNVMiIHVuaXQ9IlNlY29uZHMiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHRyYW5zZmVyIHRpbWUiIGxvY2FsZT0iZW4tdXMiLz48L1BlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24+PFBlcmZvcm1hbmNlQ291bnRlckNvbmZpZ3VyYXRpb24gY291bnRlclNwZWNpZmllcj0iXFBoeXNpY2FsRGlza1xBdmVyYWdlRGlza1F1ZXVlTGVuZ3RoIiBzYW1wbGVSYXRlPSJQVDE1UyIgdW5pdD0iQ291bnQiPjxhbm5vdGF0aW9uIGRpc3BsYXlOYW1lPSJEaXNrIHF1ZXVlIGxlbmd0aCIgbG9jYWxlPSJlbi11cyIvPjwvUGVyZm9ybWFuY2VDb3VudGVyQ29uZmlndXJhdGlvbj48L1BlcmZvcm1hbmNlQ291bnRlcnM+PE1ldHJpY3MgcmVzb3VyY2VJZD0ic3dhcm0tbWFzdGVyLUY1MEM1RjJCLTAiPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxSCIvPjxNZXRyaWNBZ2dyZWdhdGlvbiBzY2hlZHVsZWRUcmFuc2ZlclBlcmlvZD0iUFQxTSIvPjwvTWV0cmljcz48L0RpYWdub3N0aWNNb25pdG9yQ29uZmlndXJhdGlvbj48L1dhZENmZz4="
+                },
+                "protectedSettings": {
+                    "storageAccountName": "[parameters('extensions_linuxdiagnostic_storageAccountName')]",
+                    "storageAccountKey": "[parameters('extensions_linuxdiagnostic_storageAccountKey')]"
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_swarm_master_F50C5F2B_0_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-master-lb-F50C5F2B/inboundNatRules/SSH-swarm-master-F50C5F2B-0'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), '/', parameters('inboundNatRules_SSH_swarm_master_F50C5F2B_0_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name')), '/frontendIPConfigurations/swarm-master-lbFrontEnd-F50C5F2B')]"
+                },
+                "frontendPort": 2200,
+                "backendPort": 22,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/loadBalancers/swarm-master-lb-F50C5F2B/inboundNatRules/SSHPort22-swarm-master-F50C5F2B-0'.",
+            "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+            "name": "[concat(parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'), '/', parameters('inboundNatRules_SSHPort22_swarm_master_F50C5F2B_0_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "frontendIPConfiguration": {
+                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name')), '/frontendIPConfigurations/swarm-master-lbFrontEnd-F50C5F2B')]"
+                },
+                "frontendPort": 22,
+                "backendPort": 2222,
+                "enableFloatingIP": false,
+                "idleTimeoutInMinutes": 4,
+                "protocol": "Tcp"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_swarm_master_lb_F50C5F2B_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/virtualNetworks/swarm-vnet-F50C5F2B/subnets/swarm-subnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), '/', parameters('subnets_swarm_subnet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "10.0.0.0/11"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/4e69a010-3ac5-445f-ba0d-ff3b2820a38c/resourceGroups/test-oee-2/providers/Microsoft.Network/virtualNetworks/swarm-vnet-F50C5F2B/subnets/swarm-masterSubnet'.",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "name": "[concat(parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'), '/', parameters('subnets_swarm_masterSubnet_name'))]",
+            "apiVersion": "2018-02-01",
+            "scale": null,
+            "properties": {
+                "provisioningState": "Succeeded",
+                "addressPrefix": "172.16.0.0/24"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_swarm_vnet_F50C5F2B_name'))]"
+            ]
+        }
+    ]
+}
